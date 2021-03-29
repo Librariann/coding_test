@@ -15,20 +15,21 @@ function solution(board, moves) {
                 continue;
             } else {
                 bucket.push(board[j][number]); 
-                board[j][number] = 0;
+                board[j][number] = 0; 
+                console.log(bucket);
                 
                 if(bucket[bucket.length-1] === bucket[bucket.length-2]){
                     bucket.pop();
                     bucket.pop();
                     answer += 2;
                 }
-
+                
                 break;
             }
         }
        
     }
-
+    console.log(board);
     return answer;
     
 }
