@@ -1,3 +1,8 @@
+/*
+ * @name : 가운데 글자 가져오기
+ * @since : 2021-03-29
+ */
+
 function solution(s) {
     var answer = '';
 

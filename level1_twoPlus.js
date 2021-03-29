@@ -1,3 +1,8 @@
+/*
+ * @name : 두 개 뽑아서 더하기
+ * @since : 
+ */
+
 function solution(numbers) {
   var answer = [];
   var sum = 0;
