@@ -16,7 +16,8 @@ function solution(new_id) {
   //4
   if (answer[0] == ".") {
     answer = answer.substr(1);
-  } else if (answer[answer.length - 1] == ".") {
+  }
+  if (answer[answer.length - 1] == ".") {
     answer = answer.slice(0, -1);
   }
 
@@ -45,38 +46,19 @@ function solution(new_id) {
 }
 
 function dotCheck(answer) {
-  let dotCheck = 0;
-  let dotNumber = "";
-  for (let i = 0; i < answer.length; i++) {
-    if (answer[i] === ".") {
-      dotCheck++;
-    } else {
-      if (dotCheck > 1) {
-        for (let j = 0; j < dotCheck; j++) {
-          dotNumber += ".";
-        }
-        dotCheck = 0;
-        answer = answer.replace(dotNumber, ".");
-        dotNumber = "";
-      }
-    }
-  }
+  let reg = /\.{2,}/gi;
 
-  if (dotCheck > 1) {
-    for (let j = 0; j < dotCheck; j++) {
-      dotNumber += ".";
-    }
-    dotCheck = 0;
-    answer = answer.replace(dotNumber, ".");
-    dotNumber = "";
-  }
-
+  answer = answer.replace(reg, ".");
   return answer;
 }
 
-// let new_id = "...!@BaT#*..y.abcdefghijklm";
-let new_id = "z-+.^.";
+// let new_id = "...!@BaT#*..y.abcdefghijklm........";
+// let new_id = "z-+.^.";
 // let new_id = "=.=";
+// let new_id = ".123.._.--......def";
+// let new_id = ".1.";
+// let new_id = "~!@#$%&*()=+[{]}:?,<>/";
+let new_id = ".....b..1....2.13..12.3";
 // let new_id = "abcdefghijklmn.p";
 
 console.log(solution(new_id));
